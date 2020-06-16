@@ -17,6 +17,7 @@ do {
 
     if (totalPrice > credits) {
       console.log("Недостаточно средств на балансе");
+      break;
     } else {
       console.log(
         `Вы купили ${quantityToBuy} дроидов, на счету осталось ${
