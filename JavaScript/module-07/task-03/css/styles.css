@@ -1,0 +1,11 @@
+.gallery-box {
+  list-style: none;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.list-item__img {
+  width: 250px;
+}

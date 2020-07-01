@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <form action="#" method="get" target="_blank" class="reg-form">
+
+            <div class="reg-form_wrapper">
+                <input class="reg-form__name" type="text" name="user-name" placeholder="Имя *" required minlength="2" />
+                <input class="reg-form__tel" type="tel" name="phone" required placeholder="Телефон *" />
+                <input class="checkbox" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1"> I have a bike</label><br>
+            </div>
+            <button class="btn-orange" type="submit">
+                <span class="btn-orange__text">хочу на бесплатное занятие</span>
+            </button>
+        </form>
+        <input type="text">
+        <button class="main-btn">Click</button>
+        <button class="add-ev">Add listener</button>
+        <button class="rem-ev">Remove listener</button>
+
+        <ul id="categories">
+            <li class="item">
+                <h2>Животные</h2>
+
+                <ul>
+                    <li>Кот</li>
+                    <li>Хомяк</li>
+                    <li>Лошадь</li>
+                    <li>Попугай</li>
+                </ul>
+            </li>
+            <li class="item">
+                <h2>Продукты</h2>
+
+                <ul>
+                    <li>Хлеб</li>
+                    <li>Петрушка</li>
+                    <li>Творог</li>
+                </ul>
+            </li>
+            <li class="item">
+                <h2>Технологии</h2>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <script src="./js/task-01.js" type="module"></script>
+    <script src="./js/test.js" type="module"></script>
+</body>
+
+</html>
