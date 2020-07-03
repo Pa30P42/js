@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+/* Nav */
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navigationLink {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.navigationLink a {
+  padding: 5px;
+  width: 100px;
+  text-decoration: none;
+  color: white;
+}
+
+.activeNavigationLink {
+  background-color: cornflowerblue;
+  border: 1px solid cornflowerblue;
+  border-radius: 5px;
+}

@@ -8,7 +8,7 @@ const modalContentRef = document.querySelector(".lightbox__content");
 
 const grindCreator = () => {
   let markup = "";
-  for (let i = 1; i < images.length; i += 1) {
+  for (let i = 0; i < images.length; i += 1) {
     markup += `<li class="gallery__item"> 
       <a class="gallery__link" 
       >
@@ -27,51 +27,69 @@ const grindCreator = () => {
 
 grindCreator();
 
-let altOfImg = "";
-
 const showModal = (e) => {
-  window.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
-      closeModal(e);
-    }
-    if (event.code === "ArrowRight") {
-      moveToRight(e);
-    }
-  });
+  if (e.target.nodeName !== "IMG") {
+    return;
+  }
   modalRef.classList.add("is-open");
   imgRef.src = e.target.dataset.source;
   imgRef.alt = e.target.alt;
+
+  modalRef.addEventListener("click", closeModal);
+  document.addEventListener("keydown", buttonPush);
 };
 
 // const onCloseClick = (e) => {
 //   if (e.target === closeBtn || e.target === modalContentRef) {
 //     closeModal(e);
 //   }
-// };// Почему это работает ????
-function moveToRight(e) {
-  altOfImg = e.target.getAttribute("alt");
+// }; // Почему это работает ????
+const moveToRight = (e) => {
+  let srcOfImg = imgRef.getAttribute("src");
 
-  for (let i = 0; i < images.length; i += 1) {
-    if (images[i].description === altOfImg) {
-      imgRef.setAttribute("src", images[i + 1].original);
-      imgRef.setAttribute("alt", images[i + 1].description);
-      // imgRef.src = images[i + 1].original;
-    }
+  const elementIndex = images.findIndex(
+    (element) => element.original === srcOfImg
+  );
+  const newElementIndex = elementIndex + 1;
+  if (newElementIndex === 9) {
+    srcOfImg = imgRef.setAttribute("src", images[0].original);
   }
+  if (newElementIndex !== 9) {
+    srcOfImg = imgRef.setAttribute("src", images[newElementIndex].original);
+  }
+};
 
-  // imgRef.src =
-  //   e.target.parentNode.parentNode.nextSibling.firstChild.nextSibling.firstChild.nextSibling.dataset.source;
+const moveToLeft = (e) => {
+  let srcOfImg = imgRef.getAttribute("src");
+
+  const elementIndex = images.findIndex(
+    (element) => element.original === srcOfImg
+  );
+  const newElementIndex = elementIndex - 1;
+  if (newElementIndex === -1) {
+    srcOfImg = imgRef.setAttribute("src", images[8].original);
+  }
+  if (newElementIndex !== -1) {
+    srcOfImg = imgRef.setAttribute("src", images[newElementIndex].original);
+  }
+};
+function buttonPush(e) {
+  if (e.key === "Escape") {
+    closeModal(e);
+  }
+  if (e.key === "ArrowRight") {
+    moveToRight(e);
+  }
+  if (e.key === "ArrowLeft") {
+    moveToLeft(e);
+  }
 }
 
 function closeModal(e) {
-  modalRef.classList.remove("is-open");
-  imgRef.src = "";
+  if (e.target.nodeName !== "IMG") {
+    modalRef.classList.remove("is-open");
+    imgRef.src = "";
+  }
 }
 
 galleryRef.addEventListener("click", showModal);
-modalRef.addEventListener("click", closeModal);
-
-// window.addEventListener("keydown", () => {
-//   console.log(event.code);
-// });
-//ArrowLeft
