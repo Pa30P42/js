@@ -1,0 +1,28 @@
+body {
+  background-color: black;
+}
+.navList {
+  margin: 0 auto;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.navItemLink {
+  border: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: aquamarine;
+}
+
+.navItemActiveLink {
+  border: 0px;
+  padding: 5px;
+  background-color: darkcyan;
+}
+
+.pageTitle {
+  text-transform: uppercase;
+  color: aqua;
+}

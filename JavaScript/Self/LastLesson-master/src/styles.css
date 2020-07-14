@@ -1,0 +1,176 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: black;
+}
+
+/* =========================== navigation =============================== */
+
+.navigationList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  list-style: none;
+}
+
+.navigationListItem {
+  color: white;
+  text-transform: uppercase;
+  margin: 0 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.activeNavigationListItem {
+  background-color: cornflowerblue;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.invisible {
+  display: none;
+}
+
+/* ====================== pages ====================== */
+.homePageTitle,
+.productsPageTitle,
+.authPageTitle,
+.profilePageTitle {
+  color: white;
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  background-color: cornflowerblue;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------------------- authPage ------------------------- */
+.backDrop {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.authForm {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.authFormInput {
+  width: 90%;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: 2px solid cornflowerblue;
+}
+
+.authFormInput::placeholder {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.authFormButtonsGroup {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+}
+
+/* ---------------------- profilePage -------------------------- */
+
+.productForm {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.productFormInput, .productFormArea {
+  width: 90%;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: 2px solid cornflowerblue;
+}
+.productFormArea {
+  height: 150px;
+}
+
+.productFormInput::placeholder {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.productFormButton {
+  width: 150px;
+}
+
+
+/* ------------------------------ productsPage --------------------------- */
+/* <li class="productsListItem" data-id=${product.id}>
+<h2 class="productsListItemName">${product.name}</h2>
+<img src=${product.image} alt=${product.name} class="productsListItemImage">${product.name}</img>
+<p class="productsListItemDescription">${product.description}</p>
+<p class="productsListItemPrice">${product.price}</p>
+<button class="button productsListItemButton">Add to cart</button>
+</li> */
+
+.productsList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+
+  padding: 5px;
+}
+.productsListItem {
+  width: 200px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+
+}
+
+.productsListItemImage {
+  width: 100%;
+}
+.productsListItemButton {
+  width: 150px;
+}
+
+
